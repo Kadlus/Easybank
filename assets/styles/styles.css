@@ -1,4 +1,4 @@
-:root{
+:root {
     --dark-blue: hsl(233, 26%, 24%);
     --lime-green: hsl(136, 65%, 51%);
     --bright-cyan: hsl(192, 70%, 51%);
@@ -7,13 +7,24 @@
     --very-light-gray: hsl(0, 0%, 98%);
     --white: hsl(0, 0%, 100%);
 }
+
 @font-face {
     font-family: 'Public Sans', sans-serif;
 }
+
 body {
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
+
+h2 {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--dark-blue);
+    font-weight: normal;
+    font-size: 28px;
+}
+
 
 .main-nav {
     padding: 25px;
@@ -24,12 +35,15 @@ body {
     background-color: var(--white);
     z-index: 100;
 }
+
 .logo {
     width: 20%;
 }
+
 .logo img {
     text-align: left;
 }
+
 .nav-links {
     list-style: none;
     padding: 0;
@@ -37,44 +51,70 @@ body {
     gap: 30px;
     display: flex;
 }
+
 .nav-link a {
     text-decoration: none;
     color: var(--grayish-blue);
+    border-bottom: 2px solid transparent;
 }
+
+.nav-link a:hover {
+    border-bottom: 2px solid var(--lime-green);
+    color: var(--grayish-blue);
+}
+
+.mobile-button {
+    display: none;
+}
+
+.mobile-button:hover {
+    cursor: pointer;
+}
+
 .invite-button-container {
     display: flex;
     width: 20%;
     justify-content: flex-end;
 }
+
 .btn {
     width: 160px;
     padding: 10px;
     border-radius: 24px;
     border: none;
-    background: rgb(49,211,92);
+    background: rgb(49, 211, 92);
     background: linear-gradient(90deg, var(--lime-green) 0%, var(--lime-green) 35%, var(--bright-cyan) 100%);
-    color:var(--white);
+    color: var(--white);
 }
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 .intro {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
     height: 500px;
-    background: var(--light-grayish-blue);
     position: relative;
     z-index: 10;
 }
+
 .inner {
     display: flex;
 }
+
 .left-side {
     width: 50%;
 }
+
 .right-side {
     width: 50%;
     position: relative;
 }
+
 .intro-desktop {
     position: absolute;
     top: -100%;
@@ -86,9 +126,21 @@ body {
     position: absolute;
     right: -40%;
     top: -100%;
+    max-width: 100%;
 }
 
-.inner, .services, .articles-container {
+.inner, .articles-container {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.services {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: var(--light-grayish-blue);
+}
+
+.services-inner-section {
     width: 80%;
     margin: 100px auto;
 }
@@ -103,6 +155,7 @@ body {
 
 .services-container {
     display: flex;
+    justify-content: space-between;
     margin: 50px auto;
     gap: 50px;
 }
@@ -122,7 +175,9 @@ body {
 
 .posts {
     display: flex;
+    justify-content: space-between;
     gap: 50px;
+    margin: 50px auto;
 }
 
 .article-item {
@@ -132,4 +187,103 @@ body {
 .article-item img {
     max-width: 100%;
     height: auto;
+}
+
+.article-item h3 {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--dark-blue);
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.article-heading:hover {
+    color: var(--lime-green);
+    cursor: pointer;
+}
+
+.article-item p {
+    color: var(--grayish-blue);
+}
+
+footer {
+    background: var(--dark-blue);
+    padding: 25px;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.social-sites {
+    display: flex;
+    gap: 12px;
+}
+
+.fa {
+    color: var(--white);
+    font-size: 24px;
+}
+
+.social-sites .fa:hover {
+    cursor: pointer;
+    color: var(--lime-green);
+}
+
+.center-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 20%;
+}
+
+.footer-links {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-link {
+    margin-bottom: 12px;
+}
+
+.footer-link a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.footer-link a:hover {
+    color: var(--lime-green);
+}
+
+.footer-right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.rights {
+    color: var(--grayish-blue);
+}
+
+@media screen and (max-width: 767px) {
+
+    .nav-links, .invite-button-container {
+        display: none;
+    }
+
+    .main-nav {
+        justify-content: space-between;
+    }
+
+    .mobile-button {
+        display: block;
+    }
 }
